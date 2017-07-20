@@ -1,7 +1,9 @@
 <%= @player_1.name %> vs. <%= @player_2.name %>
 
-
+<p>
+<%= @player_1.name %>: <%= @player_1.hit_points %>HP
 <%= @player_2.name %>: <%= @player_2.hit_points %>HP
+</p>
 
 <form action="/attack">
   <input type="submit" value="Attack">

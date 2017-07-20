@@ -10,6 +10,6 @@ feature 'Attacking' do
     click_button 'Attack'
     click_button 'OK'
     expect(page).not_to have_content 'Mittens: 60HP'
-    expect(page).to have_content 'Mittens: 40HP'
+    expect(page).to have_content 'Mittens: 50HP'
   end
 end
