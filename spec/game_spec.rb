@@ -20,7 +20,27 @@ describe Game do
   describe '#attack' do
     it 'damages the player' do
       allow(player_2).to receive(:receive_damage)
-      game.attack(player_2)
+      game.attack
+    end
+
+    it 'changes players after each attack' do
+      allow(player_2).to receive(:receive_damage)
+      game.attack
+      expect(game.current_player).to eq player_2
+    end
+
+    it 'changes victims after each attack' do
+      allow(player_2).to receive(:receive_damage)
+      game.attack
+      expect(game.current_victim).to eq player_1
     end
   end
+
+  describe '#current_turn' do
+    it 'shows the first player at the beginning' do
+      expect(game.current_player).to eq player_1
+    end
+  end
+
+
 end
