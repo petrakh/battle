@@ -1,9 +1,12 @@
-<!-- Current player and victims have already been swapped in the code, so the they are reversed here for the sake of proper view -->
 <%= @game.current_player.name %> attacked <%= @game.current_victim.name %>
-
 <br>
 <%= @game.current_victim.name %>: <%= @game.current_victim.hit_points %>HP
 
-<form action="/switch_turns" method="post">
-  <input type="submit" value="OK">
-</form>
+<% if @game.game_over? %>
+  <h1>Game Over <%=@game.current_victim.name%>!!!</h1>
+  <br>
+<% else %>
+  <form action="/switch_turns" method="post">
+    <input type="submit" value="OK">
+  </form>
+<% end %>

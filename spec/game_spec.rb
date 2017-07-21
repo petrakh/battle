@@ -44,5 +44,14 @@ describe Game do
     end
   end
 
+  describe '#game_over' do
+    it 'shows game over true if player 2 is at 0HP' do
+      allow(player_2).to receive(:receive_damage)
+      game.attack
+      allow(player_2).to receive(:hit_points) {0}
+      expect(game).to be_game_over
+    end
+  end
+
 
 end
