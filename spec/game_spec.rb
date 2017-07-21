@@ -22,16 +22,18 @@ describe Game do
       allow(player_2).to receive(:receive_damage)
       game.attack
     end
+  end
 
-    it 'changes players after each attack' do
-      allow(player_2).to receive(:receive_damage)
-      game.attack
+  describe '#switch_turns' do
+    it 'changes the current player after each attack' do
+      #allow(player_2).to receive(:receive_damage)
+      game.switch_turns
       expect(game.current_player).to eq player_2
     end
 
-    it 'changes victims after each attack' do
-      allow(player_2).to receive(:receive_damage)
-      game.attack
+    it 'changes the current victim after each attack' do
+      #allow(player_2).to receive(:receive_damage)
+      game.switch_turns
       expect(game.current_victim).to eq player_1
     end
   end

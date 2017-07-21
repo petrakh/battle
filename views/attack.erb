@@ -1,9 +1,9 @@
 <!-- Current player and victims have already been swapped in the code, so the they are reversed here for the sake of proper view -->
-<%= @game.current_victim.name %> attacked <%= @game.current_player.name %>
+<%= @game.current_player.name %> attacked <%= @game.current_victim.name %>
 
 <br>
-<%= @game.current_player.name %>: <%= @game.current_player.hit_points %>HP
+<%= @game.current_victim.name %>: <%= @game.current_victim.hit_points %>HP
 
-<form action="/play">
+<form action="/switch_turns" method="post">
   <input type="submit" value="OK">
 </form>
