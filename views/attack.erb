@@ -1,7 +1,11 @@
+<h2>
 <%= @game.current_player.name %> attacked <%= @game.current_victim.name %>
+</h2>
 <br>
+<h4>
 <%= @game.current_victim.name %>: <%= @game.current_victim.hit_points %>HP
-
+</h4>
+<br>
 <% if @game.game_over? %>
   <h1>Game Over <%=@game.current_victim.name%>!!!</h1>
   <br>
